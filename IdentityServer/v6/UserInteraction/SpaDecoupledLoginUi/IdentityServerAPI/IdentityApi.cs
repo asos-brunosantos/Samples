@@ -89,7 +89,7 @@ namespace IdentityServerAPI.API
                 }
                 else
                 {
-                    response.ValidReturnUrl = _serverUrls.BaseUrl;
+                    response.ValidReturnUrl = Config.identityWebUIHost;
                 }
 
                 var user = _users.FindByUsername(model.Username);

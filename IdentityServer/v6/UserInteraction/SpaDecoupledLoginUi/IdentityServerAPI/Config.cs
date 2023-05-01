@@ -11,6 +11,8 @@ namespace IdentityServerAPI.Resources
 {
     public static class Config
     {
+        public static string identityWebUIHost = "https://localhost:5004";
+
         public static IEnumerable<IdentityResource> IdentityResources =>
             new List<IdentityResource>
             {

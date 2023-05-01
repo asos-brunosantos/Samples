@@ -24,10 +24,10 @@ namespace IdentityServerAPI
 
             var builder = services.AddIdentityServer(options =>
             {
-                options.UserInteraction.LoginUrl = "/login.html";
-                options.UserInteraction.ConsentUrl = "/consent.html";
-                options.UserInteraction.LogoutUrl = "/logout.html";
-                options.UserInteraction.ErrorUrl = "/error.html";
+                options.UserInteraction.LoginUrl = Config.identityWebUIHost + "/login.html";
+                options.UserInteraction.ConsentUrl = Config.identityWebUIHost + "/consent.html";
+                options.UserInteraction.LogoutUrl = Config.identityWebUIHost + "/logout.html";
+                options.UserInteraction.ErrorUrl = Config.identityWebUIHost + "/error.html";
 
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
@@ -49,7 +49,7 @@ namespace IdentityServerAPI
                 options.AddPolicy(name: _identityAPIAllowSpecificOrigins,
                     policy =>
                     {
-                        policy.WithOrigins("https://localhost:5004")
+                        policy.WithOrigins(Config.identityWebUIHost)
                             .AllowAnyMethod()
                             .AllowAnyHeader()
                             .AllowCredentials();
