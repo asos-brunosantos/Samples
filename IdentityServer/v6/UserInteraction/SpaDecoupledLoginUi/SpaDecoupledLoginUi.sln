@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerWithSpaLogin", "IdentityServerWithSpaLogin\IdentityServerWithSpaLogin.csproj", "{1C627305-E87E-4AEB-ADEE-D1A6E0BDD0F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerWebUI", "IdentityServerWithSpaLogin\IdentityServerWebUI.csproj", "{1C627305-E87E-4AEB-ADEE-D1A6E0BDD0F1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "MvcClient\MvcClient.csproj", "{14EBFBC1-BD4F-4DBA-A8E9-175622591E4E}"
 EndProject

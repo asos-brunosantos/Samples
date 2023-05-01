@@ -67,7 +67,7 @@
         }
 
         (async () => {
-            var response = await fetch("https://localhost:5001/spa/logout?logoutId=" + logoutId,
+            var response = await fetch("https://localhost:5001/api/logout?logoutId=" + logoutId,
                 {
                     method: "GET",
                     credentials: "include"
@@ -89,7 +89,7 @@
         document.querySelector("#prompt").addEventListener("submit", async e => {
             e.preventDefault();
 
-            var response = await fetch("https://localhost:5001/spa/logout?logoutId=" + logoutId,
+            var response = await fetch("https://localhost:5001/api/logout?logoutId=" + logoutId,
                 {
                     method: "POST",
                     credentials: "include"
