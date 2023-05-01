@@ -8,6 +8,7 @@ namespace IdentityServerAPI
 {
     public class Startup
     {
+        private const string _identityAPIAllowSpecificOrigins = "IdentityAPIAllowSpecificOrigins";
         public IWebHostEnvironment Environment { get; }
         public IConfiguration Configuration { get; }
 
@@ -26,8 +27,8 @@ namespace IdentityServerAPI
                 options.UserInteraction.LoginUrl = "/login.html";
                 options.UserInteraction.ConsentUrl = "/consent.html";
                 options.UserInteraction.LogoutUrl = "/logout.html";
-                options.UserInteraction.ErrorUrl = "/error.html"; 
-                
+                options.UserInteraction.ErrorUrl = "/error.html";
+
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseFailureEvents = true;
@@ -41,6 +42,19 @@ namespace IdentityServerAPI
             // in-memory, code config
             builder.AddInMemoryIdentityResources(Config.IdentityResources);
             builder.AddInMemoryClients(Config.Clients);
+
+            //setup CORS policy
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: _identityAPIAllowSpecificOrigins,
+                    policy =>
+                    {
+                        policy.WithOrigins("https://localhost:5004")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials();
+                    });
+            });
         }
 
         public void Configure(IApplicationBuilder app)
@@ -54,6 +68,9 @@ namespace IdentityServerAPI
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors(_identityAPIAllowSpecificOrigins);
+
             app.UseIdentityServer();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

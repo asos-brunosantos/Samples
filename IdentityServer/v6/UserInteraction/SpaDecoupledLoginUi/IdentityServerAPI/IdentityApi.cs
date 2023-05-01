@@ -40,7 +40,7 @@ namespace IdentityServerAPI.API
     }
 
     [Route("api")]
-    [EnableCors("api")]
+    [EnableCors("IdentityAPIAllowSpecificOrigins")]
     public class IdentityApi : ControllerBase
     {
         private readonly IIdentityServerInteractionService _interaction;
@@ -78,7 +78,7 @@ namespace IdentityServerAPI.API
         {
             var response = new LoginConsentResponse();
 
-            if (ModelState.IsValid && _users.ValidateCredentials(model.Username, model.Password))
+            if (_users.ValidateCredentials(model.Username, model.Password))
             {
                 var url = model.ReturnUrl != null ? Uri.UnescapeDataString(model.ReturnUrl) : null;
 
