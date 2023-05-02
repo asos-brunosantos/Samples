@@ -36,6 +36,9 @@ namespace IdentityServerAPI
 
                 // see https://docs.duendesoftware.com/identityserver/v5/fundamentals/resources/
                 options.EmitStaticAudienceClaim = true;
+
+                //this is requirent when sending full path identity urls in the returnURL. otherwise GetAuthContext fails to resolve the request. this is not documented anywhere...
+                options.UserInteraction.AllowOriginInReturnUrl = true;
             })
                 .AddTestUsers(TestUsers.Users);
 
