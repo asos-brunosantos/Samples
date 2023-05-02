@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerWebUI", "Iden
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "MvcClient\MvcClient.csproj", "{14EBFBC1-BD4F-4DBA-A8E9-175622591E4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerAPI", "IdentityServerAPI\IdentityServerAPI.csproj", "{DB9373D0-9266-4896-B506-476933AB8725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerAPI", "IdentityServerAPI\IdentityServerAPI.csproj", "{DB9373D0-9266-4896-B506-476933AB8725}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiResource", "ApiResource\ApiResource.csproj", "{D796E292-FD0E-467C-A879-83E50A3F884E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptClient", "JavaScriptClient\JavaScriptClient.csproj", "{4D73CACD-3348-49AD-A066-CC03CEA7E73D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D796E292-FD0E-467C-A879-83E50A3F884E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D796E292-FD0E-467C-A879-83E50A3F884E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D796E292-FD0E-467C-A879-83E50A3F884E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D73CACD-3348-49AD-A066-CC03CEA7E73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D73CACD-3348-49AD-A066-CC03CEA7E73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D73CACD-3348-49AD-A066-CC03CEA7E73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D73CACD-3348-49AD-A066-CC03CEA7E73D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

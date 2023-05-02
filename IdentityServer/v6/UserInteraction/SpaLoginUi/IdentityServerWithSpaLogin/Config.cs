@@ -29,9 +29,9 @@ namespace IdentityServerWithSpaLogin
 
                     RequireConsent = true,
 
-                    RedirectUris = { "https://localhost:44300/signin-oidc" },
-                    FrontChannelLogoutUri = "https://localhost:44300/signout-oidc",
-                    PostLogoutRedirectUris = { "https://localhost:44300/signout-callback-oidc" },
+                    RedirectUris = { "https://localhost:45300/signin-oidc" },
+                    FrontChannelLogoutUri = "https://localhost:45300/signout-oidc",
+                    PostLogoutRedirectUris = { "https://localhost:45300/signout-callback-oidc" },
 
                     AllowedScopes = { "openid", "profile" }
                 },
