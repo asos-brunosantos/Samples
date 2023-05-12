@@ -47,6 +47,7 @@ namespace IdentityServerAPI.API
         private readonly IServerUrls _serverUrls;
         private readonly TestUserStore _users;
 
+        //TODO how to decouple social external login?
         public IdentityApi(IIdentityServerInteractionService interaction, IServerUrls serverUrls)
         {
             _interaction = interaction;
@@ -96,14 +97,16 @@ namespace IdentityServerAPI.API
                 var isUser = new IdentityServerUser(user.SubjectId) { 
                     DisplayName = user.Username,
                 };
-                
+
+                //this doesn't get sent in the model anymore. do we need it?
                 var props = new AuthenticationProperties
                 {
-                    IsPersistent = model.Remember
+                    IsPersistent = true//model.Remember
                 };
-                
+
                 await HttpContext.SignInAsync(isUser.CreatePrincipal(), props);
-                
+                //await HttpContext.SignInAsync(isUser.CreatePrincipal());
+
                 return Ok(response);
             }
 

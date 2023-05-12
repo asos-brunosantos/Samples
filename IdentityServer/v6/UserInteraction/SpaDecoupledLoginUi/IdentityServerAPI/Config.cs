@@ -32,7 +32,7 @@ namespace IdentityServerAPI.Resources
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-            new ApiScope("api1", "MyAPI")
+            new ApiScope("api2", "MyAPI")
             };
 
         public static IEnumerable<ApiResource> ApiResources =>
@@ -43,16 +43,16 @@ namespace IdentityServerAPI.Resources
         public static IEnumerable<Client> Clients =>
             new List<Client>
             {
-                // machine-to-machine client (from quickstart 1)
-                new Client
-                {
-                    ClientId = "client",
-                    ClientSecrets = { new Secret("secret".Sha256()) },
+                //// machine-to-machine client (from quickstart 1)
+                //new Client
+                //{
+                //    ClientId = "client",
+                //    ClientSecrets = { new Secret("secret".Sha256()) },
 
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    // scopes that client has access to
-                    AllowedScopes = { "api1" }
-                },
+                //    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                //    // scopes that client has access to
+                //    AllowedScopes = { "api1" }
+                //},
                 // interactive ASP.NET Core Web App
                 new Client
                 {
@@ -73,7 +73,7 @@ namespace IdentityServerAPI.Resources
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        "api2"
                     }
                 },
                 // interactive client using code flow + pkce
@@ -108,7 +108,7 @@ namespace IdentityServerAPI.Resources
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        "api2"//maybe try api2 to see if this bloody works. makes no sense.
                     }
                 }
             };

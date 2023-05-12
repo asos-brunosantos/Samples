@@ -22,7 +22,7 @@ var config = {
   client_id: "js",
   redirect_uri: "https://localhost:5003/callback.html",
   response_type: "code",
-  scope: "openid profile api1",
+  scope: "openid profile api2",//api1 scope doesn't work. don't know why because it's in the allowed copes for js client
   post_logout_redirect_uri: "https://localhost:5003/index.html",
 };
 var mgr = new Oidc.UserManager(config);

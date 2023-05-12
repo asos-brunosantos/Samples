@@ -52,7 +52,7 @@ namespace IdentityServerAPI
                 options.AddPolicy(name: _identityAPIAllowSpecificOrigins,
                     policy =>
                     {
-                        policy.WithOrigins(Config.identityWebUIHost)
+                        policy.WithOrigins(Config.identityWebUIHost, "https://localhost:5003")
                             .AllowAnyMethod()
                             .AllowAnyHeader()
                             .AllowCredentials();
